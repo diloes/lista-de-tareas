@@ -1,18 +1,17 @@
-# Getting Started with Create React App
+# Lista de Tareas - REACT 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+El clásico ToDo que se suele hacer cuando uno está aprendiendo React. He querido dejarlo por aquí por si 
+alguien le viene bien el código y puede aprender algo de él. 
 
-## Available Scripts
+## Cómo funciona
 
-In the project directory, you can run:
+A continuación voy a detallar el funcionamiento de la aplicación.
 
-### `npm start`
+### Componente principal: `TodoApp`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+En este componente vamos a mostrar un formulario y una lista de tareas a través del componente hijo Todo.
+Tenemos dos estados, uno para el texto del formulario(tarea) y otro para la lista de tareas(todos).
+También disponemos de 4 funciones las cuales están explicadas en el mismo código.
 
 ### `npm test`
 
