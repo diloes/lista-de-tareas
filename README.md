@@ -9,9 +9,14 @@ A continuación voy a detallar el funcionamiento de la aplicación.
 
 ### Componente principal: `TodoApp`
 
-En este componente vamos a mostrar un formulario y una lista de tareas a través del componente hijo Todo.
+En este componente vamos a mostrar un formulario y una lista de tareas a través del componente hijo: Todo.
 Tenemos dos estados, uno para el texto del formulario(tarea) y otro para la lista de tareas(todos).
-También disponemos de 4 funciones las cuales están explicadas en el mismo código.
+También disponemos de 4 funciones:
+ - handleChange -> Para asignar el valor del input del formulario a la variable de estado `tarea`
+ - handleSubmit -> Para añadir una nueva tarea a la lista de tareas
+ - handleDelete -> Para eliminar una tarea de la lista de tareas(Se ejecuta en el componente hijo)
+ - handleUpdate -> Para actualizar una tarea de la lista de tareas(Se ejecuta en el componente hijo)
+
 
 ### `npm test`
 
