@@ -1,6 +1,9 @@
 import { useState } from 'react'
 import Todo from '../Todo'
 
+import './style.css'
+
+
 const TodoApp = () => {
 
   // Estados de TodoApp, uno para cada tarea y otro para la lista de tareas

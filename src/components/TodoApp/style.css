@@ -1,0 +1,37 @@
+.todoApp {
+  width: 500px;
+  margin: 100px auto;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.todoApp__form {
+  display: flex;
+  gap: 5px;
+}
+
+.todoApp__input {
+  flex-grow: 1;
+  width: 100%;
+  padding: 10px;
+  border-radius: 3px;
+  border: 1px solid #999;
+  font-size: 20px;
+}
+
+.todoApp__button {
+  border: none;
+  border-radius: 3px;
+  background-color: rgb(26, 76, 169);
+  color: white;
+  padding: 10px 20px;
+}
+
+.todoApp__lista {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 10px;
+}
+

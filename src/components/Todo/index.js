@@ -1,67 +1,34 @@
 import { useState } from "react"
+import FormEdit from '../FormEdit'
+import TodoElement from '../TodoElement'
+
+import './style.css'
 
 const Todo = ({ todo, onUpdate, onDelete }) => {
 
   // State(boolean)
   const [isEdit, setIsEdit] = useState(false)
 
-  // Componente hijo para editar tarea
-  const FormEdit = () => {
-
-    // estado de FormEdit
-    const [newValue, setNewValue] = useState(todo.tarea)
-
-    const handleSubmit = e => {
-      e.preventDefault()
-    }
-
-    // el value del input lo almacenamos en newValue
-    const handleChange = e => {
-      const value = e.target.value
-      setNewValue(value)
-    }
-  
-    // cuando clickamos en actualizar 
-    const handleClick = () => {
-      
-      // ejecutamos 'onUpdate' que nos llega por props
-      onUpdate(todo.id, newValue)
-      
-      // y ponemos de nuevo el estado en false para que muestre la lista
-      setIsEdit(false)
-    }
-
-    return (
-      <form className='formEdit' onSubmit={handleSubmit}>
-        <input 
-          type='text' 
-          className='formEdit__input'
-          onChange={handleChange} 
-          value={newValue} 
-        />
-        <button
-          className='formEdit__button'
-          onClick={handleClick}
-        >Actualizar</button>
-      </form>
-    )
-  }
-
-  // Componente hijo para mostrar tarea
-  const TodoElement = () => {
-    return (
-      <div className='todoElement'>
-        {todo.tarea}
-        <button onClick={() => setIsEdit(true)}>Editar</button>
-        <button onClick={() => onDelete(todo.id)}>Eliminar</button>
-      </div>
-    )
+  // Cambiar estado 'isEdit' desde los componentes hijos 
+  const isEditChange = () => {
+    setIsEdit(!isEdit)
   }
 
   return (
-    <div>
+    <div className='todo'>
       {/* Si isEdit es true mostramos FormEdit si no, TodoElement */}
-      { isEdit ? <FormEdit /> : <TodoElement /> }
+      { isEdit ? 
+          <FormEdit 
+            todo={todo} 
+            onUpdate={onUpdate}
+            isEditChange={isEditChange}
+          /> 
+        : <TodoElement 
+            todo={todo}
+            onDelete={onDelete}
+            isEditChange={isEditChange}
+          /> 
+      }
     </div>
   );
 }
