@@ -9,10 +9,6 @@ const FormEdit = ({ todo, onUpdate, isEditChange }) => {
   // estado de FormEdit
   const [newValue, setNewValue] = useState(todo.tarea)
 
-  const handleSubmit = e => {
-    e.preventDefault()
-  }
-
   // el value del input lo almacenamos en newValue
   const handleChange = e => {
     const value = e.target.value
@@ -30,7 +26,7 @@ const FormEdit = ({ todo, onUpdate, isEditChange }) => {
   }
 
   return (
-    <form className='formEdit' onSubmit={handleSubmit}>
+    <form className='formEdit'>
       <input 
         type='text' 
         className='formEdit__input'
